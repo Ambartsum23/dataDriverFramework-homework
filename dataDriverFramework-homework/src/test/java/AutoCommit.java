@@ -18,6 +18,10 @@ public class AutoCommit {
             Statement stmt = conn.createStatement();
             ResultSet rs= stmt.executeQuery(query);
             while (rs.next()) {
+                   /*  softAssertion.assertEquals(rs.getInt("firstName"), 1004);
+            softAssertion.assertEquals(rs.getString("firstName"), "Ambartsum");
+            softAssertion.assertEquals(rs.getString("firstName"), "Ambartsum");
+            softAssertion.assertEquals(rs.getInt("firstName"), 555666777);*/
                 softAssertion.assertTrue(rs.getString("firstName").contains("Ambartsum"));}
             conn.commit();
             softAssertion.assertEquals(rowAffected, 1);
